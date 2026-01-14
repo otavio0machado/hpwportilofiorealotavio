@@ -12,7 +12,7 @@ const projects = [
         color: 'purple',
         size: 'large',
         gradient: 'from-purple-600 to-blue-600',
-        url: 'https://felipeinvportifolio.vercel.app/',
+        url: 'https://felipe-inv.vercel.app/',
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const projects = [
         color: 'green',
         size: 'medium',
         gradient: 'from-green-600 to-emerald-600',
-        url: 'https://cleancarportifolio.vercel.app/',
+        url: 'https://cleancar-five.vercel.app/',
     },
     {
         id: 3,
