@@ -36,7 +36,7 @@ const projects = [
         color: 'blue',
         size: 'small',
         gradient: 'from-blue-600 to-cyan-600',
-        url: 'https://fluxoaiportifolio.vercel.app/',
+        url: 'https://fluxoai.vercel.app/',
     },
     {
         id: 4,
@@ -60,7 +60,7 @@ const projects = [
         color: 'pink',
         size: 'medium',
         gradient: 'from-pink-600 to-rose-600',
-        url: 'https://helena-martins-portifolio.vercel.app/',
+        url: 'https://helena-martins-otavio0machados-projects.vercel.app/',
     },
 ];
 
