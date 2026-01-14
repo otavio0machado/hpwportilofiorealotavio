@@ -1,4 +1,74 @@
-orange: 'bg-orange-500/10 border-orange-500/20 hover:border-orange-500/40',
+import { motion } from 'framer-motion';
+import { TrendingUp, Smartphone, Sparkles, Timer, Heart, ExternalLink } from 'lucide-react';
+
+const projects = [
+    {
+        id: 1,
+        title: 'Felipe Investimentos',
+        category: 'Conversão',
+        description: 'Landing page focada em captação de leads com taxa de conversão de 12%.',
+        highlight: '+340% leads',
+        icon: TrendingUp,
+        color: 'purple',
+        size: 'large',
+        gradient: 'from-purple-600 to-blue-600',
+        url: 'https://felipeinvportifolio.vercel.app/',
+    },
+    {
+        id: 2,
+        title: 'CleanCar',
+        category: 'Mobile First',
+        description: 'Aplicativo de agendamento de lavagem automotiva otimizado para celular.',
+        highlight: '98% mobile',
+        icon: Smartphone,
+        color: 'green',
+        size: 'medium',
+        gradient: 'from-green-600 to-emerald-600',
+        url: 'https://cleancarportifolio.vercel.app/',
+    },
+    {
+        id: 3,
+        title: 'Fluxo.ai',
+        category: 'SaaS',
+        description: 'Dashboard de automação com design moderno e intuitivo.',
+        highlight: 'Design system',
+        icon: Sparkles,
+        color: 'blue',
+        size: 'small',
+        gradient: 'from-blue-600 to-cyan-600',
+        url: 'https://fluxoaiportifolio.vercel.app/',
+    },
+    {
+        id: 4,
+        title: 'Semana Fullstack',
+        category: 'Evento',
+        description: 'Página de inscrição com timer de urgência e checkout integrado.',
+        highlight: '+2.5k inscritos',
+        icon: Timer,
+        color: 'orange',
+        size: 'small',
+        gradient: 'from-orange-600 to-red-600',
+        url: 'https://semana-fullstack-portifolio.vercel.app/',
+    },
+    {
+        id: 5,
+        title: 'Dra. Helena',
+        category: 'Saúde',
+        description: 'Site elegante para consultório de dermatologia com agendamento online.',
+        highlight: 'Elegante',
+        icon: Heart,
+        color: 'pink',
+        size: 'medium',
+        gradient: 'from-pink-600 to-rose-600',
+        url: 'https://helena-martins-portifolio.vercel.app/',
+    },
+];
+
+const colorClasses = {
+    purple: 'bg-purple-500/10 border-purple-500/20 hover:border-purple-500/40',
+    green: 'bg-green-500/10 border-green-500/20 hover:border-green-500/40',
+    blue: 'bg-blue-500/10 border-blue-500/20 hover:border-blue-500/40',
+    orange: 'bg-orange-500/10 border-orange-500/20 hover:border-orange-500/40',
     pink: 'bg-pink-500/10 border-pink-500/20 hover:border-pink-500/40',
 };
 
@@ -43,7 +113,10 @@ export default function Portfolio() {
                         const Icon = project.icon;
 
                         return (
-                            <motion.div
+                            <motion.a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 key={project.id}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +125,7 @@ export default function Portfolio() {
                                 whileHover={{ scale: 1.02 }}
                                 className={`${sizeClasses[project.size]} ${colorClasses[project.color]} 
                   glass rounded-2xl p-6 border cursor-pointer transition-all duration-300 
-                  relative overflow-hidden group`}
+                  relative overflow-hidden group block`}
                             >
                                 {/* Gradient overlay on hover */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 
@@ -96,7 +169,7 @@ export default function Portfolio() {
                                 <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br 
                   ${project.gradient} opacity-20 blur-3xl group-hover:opacity-40 
                   transition-opacity duration-300`}></div>
-                            </motion.div>
+                            </motion.a>
                         );
                     })}
                 </div>
